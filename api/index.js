@@ -1,7 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect("mongodb+srv://<mern-estate>:<mern>@mern-estate.g2u5l.mongodb.net/?retryWrites=true&w=majority&appName=mern-estate")
+mongoose.connect(process.env.MONGO).then(() => {
+    console.log('Connected to MongoDB !');
+})
+.catch((err) => {
+    console.log(err);
+});
 
 const app = express();
 
