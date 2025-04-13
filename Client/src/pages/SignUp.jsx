@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Signin from "./Signin";
+import SignIn from "./Signin";
 
-function SignUp() {
+export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -58,7 +58,5 @@ function SignUp() {
       </div>
       {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
-  )
+  );
 }
-
-export default Signin
